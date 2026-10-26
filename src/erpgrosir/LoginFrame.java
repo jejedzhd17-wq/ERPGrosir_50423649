@@ -1,5 +1,9 @@
 package erpgrosir;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 /**
  * Halaman Login
  * @author Jeremy Nathanael Sahertian - 50423649
@@ -109,21 +113,28 @@ public class LoginFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        // sementara memakai akun dummy (password = username), nanti dicek ke tabel user
-        String user = txtUsername.getText().trim().toLowerCase();
+        String user = txtUsername.getText().trim();
         String pass = new String(txtPassword.getPassword());
-        String role = switch (user) {
-            case "admin" -> "Admin";
-            case "kasir" -> "Kasir";
-            case "gudang" -> "Gudang";
-            default -> null;
-        };
-        if (role == null || !pass.equals(user)) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Username atau password salah", "Login Gagal", javax.swing.JOptionPane.ERROR_MESSAGE);
+        if (user.isEmpty() || pass.isEmpty()) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Username dan password wajib diisi", "Login Gagal", javax.swing.JOptionPane.WARNING_MESSAGE);
             return;
         }
-        new DashboardFrame(user, role).setVisible(true);
-        dispose();
+        // password di tabel user disimpan dalam bentuk hash SHA-256
+        String sql = "SELECT role FROM user WHERE username = ? AND password = SHA2(?, 256)";
+        try (PreparedStatement ps = Koneksi.getKoneksi().prepareStatement(sql)) {
+            ps.setString(1, user);
+            ps.setString(2, pass);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (!rs.next()) {
+                    javax.swing.JOptionPane.showMessageDialog(this, "Username atau password salah", "Login Gagal", javax.swing.JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                new DashboardFrame(user, rs.getString("role")).setVisible(true);
+                dispose();
+            }
+        } catch (SQLException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Gagal terhubung ke database: " + e.getMessage(), "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnLoginActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

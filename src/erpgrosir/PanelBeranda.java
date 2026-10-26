@@ -1,5 +1,9 @@
 package erpgrosir;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 /**
  * Halaman Dashboard: ringkasan jumlah barang, penjualan hari ini, stok menipis.
  * @author Jeremy Nathanael Sahertian - 50423649
@@ -9,10 +13,24 @@ public class PanelBeranda extends javax.swing.JPanel {
     public PanelBeranda(String username, String role) {
         initComponents();
         lblSelamat.setText("Selamat datang, " + username + " (" + role + ")");
-        // data contoh, nanti diganti query dari database
-        lblNilai1.setText("4");
-        lblNilai2.setText("Rp 1.250.000");
-        lblNilai3.setText("1 barang");
+        tampilRingkasan();
+    }
+
+    private void tampilRingkasan() {
+        String sql = "SELECT "
+                + "(SELECT COUNT(*) FROM barang) AS jumlah_barang, "
+                + "(SELECT COALESCE(SUM(total), 0) FROM penjualan WHERE DATE(tanggal) = CURDATE()) AS penjualan_hari_ini, "
+                + "(SELECT COUNT(*) FROM barang WHERE stok <= stok_minimum) AS stok_menipis";
+        try (Statement st = Koneksi.getKoneksi().createStatement();
+             ResultSet rs = st.executeQuery(sql)) {
+            if (rs.next()) {
+                lblNilai1.setText(String.valueOf(rs.getInt("jumlah_barang")));
+                lblNilai2.setText(String.format("Rp %,.0f", rs.getDouble("penjualan_hari_ini")).replace(',', '.'));
+                lblNilai3.setText(rs.getInt("stok_menipis") + " barang");
+            }
+        } catch (SQLException e) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Gagal memuat ringkasan: " + e.getMessage(), "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     /**

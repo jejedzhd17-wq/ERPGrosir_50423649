@@ -94,3 +94,6 @@ CREATE TABLE kas (
     no_referensi VARCHAR(15),                  -- no_faktur / no_po asal transaksi
     INDEX (tanggal)
 );
+
+-- Akun Admin pertama (password: admin), akun Kasir dan Gudang dibuat lewat menu Kelola Pengguna
+INSERT INTO user (username, password, role) VALUES ('admin', SHA2('admin', 256), 'Admin');
