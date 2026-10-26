@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties><Property name="defaultCloseOperation" type="int" value="3"/><Property name="title" type="java.lang.String" value="ERP-Grosir - Dashboard"/></Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="pnlKiri">
+      <Properties><Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor"><Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo"><EmptyBorder bottom="10" left="10" right="10" top="10"/></Border></Property></Properties>
+      <Constraints><Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription"><BorderConstraints direction="West"/></Constraint></Constraints>
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="pnlMenu">
+          <Constraints><Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription"><BorderConstraints direction="North"/></Constraint></Constraints>
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout"><Property name="columns" type="int" value="1"/><Property name="rows" type="int" value="0"/><Property name="verticalGap" type="int" value="6"/></Layout>
+          <SubComponents>
+            <Component class="javax.swing.JButton" name="btnDashboard">
+              <Properties><Property name="text" type="java.lang.String" value="Dashboard"/></Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDashboardActionPerformed"/></Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnBarang">
+              <Properties><Property name="text" type="java.lang.String" value="Data Barang"/></Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBarangActionPerformed"/></Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnPelangganSupplier">
+              <Properties><Property name="text" type="java.lang.String" value="Data Pelanggan dan Supplier"/></Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPelangganSupplierActionPerformed"/></Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnKas">
+              <Properties><Property name="text" type="java.lang.String" value="Data Kas"/></Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKasActionPerformed"/></Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnLaporan">
+              <Properties><Property name="text" type="java.lang.String" value="Laporan"/></Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLaporanActionPerformed"/></Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnPengguna">
+              <Properties><Property name="text" type="java.lang.String" value="Kelola Pengguna"/></Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPenggunaActionPerformed"/></Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnPenjualan">
+              <Properties><Property name="text" type="java.lang.String" value="Transaksi Penjualan"/></Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPenjualanActionPerformed"/></Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnFaktur">
+              <Properties><Property name="text" type="java.lang.String" value="Faktur Penjualan"/></Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFakturActionPerformed"/></Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnPembelian">
+              <Properties><Property name="text" type="java.lang.String" value="Pembelian Barang"/></Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPembelianActionPerformed"/></Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnPenerimaan">
+              <Properties><Property name="text" type="java.lang.String" value="Penerimaan Barang"/></Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPenerimaanActionPerformed"/></Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnStok">
+              <Properties><Property name="text" type="java.lang.String" value="Stok Barang"/></Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnStokActionPerformed"/></Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JButton" name="btnLogout">
+          <Properties><Property name="text" type="java.lang.String" value="Logout"/></Properties>
+          <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLogoutActionPerformed"/></Events>
+          <Constraints><Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription"><BorderConstraints direction="South"/></Constraint></Constraints>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="pnlKonten">
+      <Constraints><Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription"><BorderConstraints direction="Center"/></Constraint></Constraints>
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
+      <SubComponents>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

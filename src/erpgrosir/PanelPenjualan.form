@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties><Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor"><Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo"><EmptyBorder bottom="10" left="10" right="10" top="10"/></Border></Property></Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout"><Property name="horizontalGap" type="int" value="10"/><Property name="verticalGap" type="int" value="10"/></Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="pnlAtas">
+      <Constraints><Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription"><BorderConstraints direction="North"/></Constraint></Constraints>
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout"><Property name="columns" type="int" value="1"/><Property name="rows" type="int" value="3"/></Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lblJudul">
+          <Properties><Property name="text" type="java.lang.String" value="Transaksi Penjualan"/><Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor"><Font name="Helvetica Neue" size="20" style="1"/></Property></Properties>
+        </Component>
+        <Container class="javax.swing.JPanel" name="pnlPelanggan">
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"><Property name="alignment" type="int" value="0"/></Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblPelanggan">
+              <Properties><Property name="text" type="java.lang.String" value="Pelanggan"/></Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cmbPelanggan">
+              <Properties><Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor"><StringArray count="2"><StringItem index="0" value="Toko Berkah"/><StringItem index="1" value="Warung Sinar"/></StringArray></Property></Properties>
+              <AuxValues><AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/></AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="pnlBarang">
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"><Property name="alignment" type="int" value="0"/></Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="lblBarang">
+              <Properties><Property name="text" type="java.lang.String" value="Barang"/></Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="cmbBarang">
+              <Properties><Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor"><StringArray count="4"><StringItem index="0" value="BRG001 - Beras 5kg"/><StringItem index="1" value="BRG002 - Minyak Goreng 2L"/><StringItem index="2" value="BRG003 - Gula Pasir 1kg"/><StringItem index="3" value="BRG004 - Air Mineral 600ml"/></StringArray></Property></Properties>
+              <AuxValues><AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/></AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblStok">
+              <Properties><Property name="text" type="java.lang.String" value="(Stok: 120)"/></Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="lblQty">
+              <Properties><Property name="text" type="java.lang.String" value="Qty"/></Properties>
+            </Component>
+            <Component class="javax.swing.JSpinner" name="spnQty">
+            </Component>
+            <Component class="javax.swing.JButton" name="btnTambah">
+              <Properties><Property name="text" type="java.lang.String" value="Tambah ke Keranjang"/></Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTambahActionPerformed"/></Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnHapusItem">
+              <Properties><Property name="text" type="java.lang.String" value="Hapus Item"/></Properties>
+              <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHapusItemActionPerformed"/></Events>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JScrollPane" name="scrKeranjang">
+      <AuxValues><AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/></AuxValues>
+      <Constraints><Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription"><BorderConstraints direction="Center"/></Constraint></Constraints>
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTable" name="tblKeranjang">
+          <Properties><Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor"><Table columnCount="5" rowCount="0"><Column editable="true" title="Kode" type="java.lang.Object"/><Column editable="true" title="Nama Barang" type="java.lang.Object"/><Column editable="true" title="Harga" type="java.lang.Object"/><Column editable="true" title="Qty" type="java.lang.Object"/><Column editable="true" title="Subtotal" type="java.lang.Object"/></Table></Property></Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="pnlBawah">
+      <Constraints><Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription"><BorderConstraints direction="South"/></Constraint></Constraints>
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"><Property name="alignment" type="int" value="0"/></Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lblTotal">
+          <Properties><Property name="text" type="java.lang.String" value="Total: Rp 1.050.000"/><Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor"><Font name="Helvetica Neue" size="18" style="1"/></Property></Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnSimpan">
+          <Properties><Property name="text" type="java.lang.String" value="Simpan Transaksi"/></Properties>
+          <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSimpanActionPerformed"/></Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnCetak">
+          <Properties><Property name="text" type="java.lang.String" value="Cetak Faktur"/></Properties>
+          <Events><EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCetakActionPerformed"/></Events>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
